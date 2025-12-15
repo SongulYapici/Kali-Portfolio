@@ -1,0 +1,572 @@
+┌──(kali㉿kali)-[~]
+└─$ pwd        
+/home/kali
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ cd ~
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ mkdir -p ~/kali-ovelser/fs/{data,tmp}
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ echo "hej kali" > ~/kali-ovelser/fs/data/notes.txt
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ mv ~/kali-ovelser/fs/data/notes.txt ~/kali-ovelser/fs/tmp/.hidden_notes
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ 
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ mv ~/kali-ovelser/fs/data/notes.txt ~/kali-ovelser/fs/tmp/.hidden_notes
+mv: cannot stat '/home/kali/kali-ovelser/fs/data/notes.txt': No such file or directory
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ mv ~/kali-ovelser/fs/data/notes.txt ~/kali-ovelser/fs/tmp/.hidden_notes
+
+mv: cannot stat '/home/kali/kali-ovelser/fs/data/notes.txt': No such file or directory
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ whoami
+kali
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ groups
+kali adm dialout cdrom floppy sudo audio dip video plugdev users netdev scanner bluetooth lpadmin wireshark kaboxer vboxsf
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ getent passwd $(whoami)
+kali:x:1000:1000::/home/kali:/usr/bin/zsh
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ sudo groupadd lab
+[sudo] password for kali: 
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ sudo usermod -aG lab $(whoami)
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ 
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ ps -u $(whoami)
+    PID TTY          TIME CMD
+    819 ?        00:00:00 systemd
+    821 ?        00:00:00 (sd-pam)
+    841 ?        00:00:00 dbus-daemon
+    842 ?        00:00:00 pipewire
+    843 ?        00:00:00 pipewire
+    844 ?        00:00:00 wireplumber
+    846 ?        00:00:00 pipewire-pulse
+    847 ?        00:00:00 gnome-keyring-d
+    848 ?        00:00:00 mpris-proxy
+    860 ?        00:00:00 xfce4-session
+    930 ?        00:00:00 VBoxClient
+    932 ?        00:00:00 VBoxClient
+    945 ?        00:00:00 VBoxClient
+    946 ?        00:00:00 VBoxClient
+    953 ?        00:00:00 VBoxClient
+    954 ?        00:00:05 VBoxClient
+    978 ?        00:00:00 at-spi-bus-laun
+    985 ?        00:00:00 dbus-daemon
+    995 ?        00:00:00 at-spi2-registr
+   1003 ?        00:00:00 ssh-agent
+   1012 ?        00:00:00 gpg-agent
+   1015 ?        00:00:03 xfwm4
+   1019 ?        00:00:00 gvfsd
+   1025 ?        00:00:00 gvfsd-fuse
+   1041 ?        00:00:00 VBoxClient
+   1042 ?        00:00:00 VBoxClient
+   1052 ?        00:00:00 xfsettingsd
+   1057 ?        00:00:00 dconf-service
+   1062 ?        00:00:00 xfce4-panel
+   1067 ?        00:00:00 Thunar
+   1073 ?        00:00:02 xfdesktop
+   1077 ?        00:00:00 wrapper-2.0
+   1081 ?        00:00:03 wrapper-2.0
+   1082 ?        00:00:00 wrapper-2.0
+   1083 ?        00:00:02 wrapper-2.0
+   1085 ?        00:00:00 wrapper-2.0
+   1086 ?        00:00:00 wrapper-2.0
+   1087 ?        00:00:00 wrapper-2.0
+   1089 ?        00:00:00 wrapper-2.0
+   1112 ?        00:00:00 xfce4-notifyd
+   1146 ?        00:00:00 polkit-mate-aut
+   1147 ?        00:00:00 xcape
+   1149 ?        00:00:00 blueman-applet
+   1151 ?        00:00:00 agent
+   1152 ?        00:00:00 xiccd
+   1155 ?        00:00:00 xfce4-screensav
+   1159 ?        00:00:00 applet.py
+   1165 ?        00:00:00 xfce4-power-man
+   1191 ?        00:00:00 nm-applet
+   1266 ?        00:00:00 gvfs-udisks2-vo
+   1289 ?        00:00:00 gvfs-afc-volume
+   1300 ?        00:00:00 gvfs-mtp-volume
+   1304 ?        00:00:00 obexd
+   1309 ?        00:00:00 gvfs-gphoto2-vo
+   1314 ?        00:00:00 gvfs-goa-volume
+   1329 ?        00:00:00 gvfsd-metadata
+   1333 ?        00:00:00 gvfsd-trash
+   1441 ?        00:00:00 xdg-desktop-por
+   1446 ?        00:00:00 xdg-permission-
+   1454 ?        00:00:00 xdg-document-po
+   1466 ?        00:00:00 xdg-desktop-por
+   3518 ?        00:00:01 qterminal
+   3525 pts/0    00:00:00 zsh
+   9482 pts/0    00:00:00 ps
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ echo $$ 
+3525
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ sleep 60 &
+[1] 9663
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ jobs
+
+[1]  + running    sleep 60
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ 
+[1]  + done       sleep 60
+┌──(kali㉿kali)-[~]
+└─$ top -b -n1 | head
+top - 15:26:56 up 19 min,  1 user,  load average: 0.08, 0.04, 0.00
+Tasks: 168 total,   1 running, 167 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  4.8 sy,  0.0 ni, 95.2 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st 
+MiB Mem :   1973.7 total,    953.6 free,    709.6 used,    472.8 buff/cache     
+MiB Swap:    953.7 total,    953.7 free,      0.0 used.   1264.1 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+  10602 kali      20   0   10420   5180   3132 R  20.0   0.3   0:00.02 top
+      1 root      20   0   23628  14452  10672 S   0.0   0.7   0:00.91 systemd
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.01 kthreadd
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+udev            921M     0  921M   0% /dev
+tmpfs           198M  976K  197M   1% /run
+/dev/sda1        79G   15G   60G  20% /
+tmpfs           987M  4.0K  987M   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+tmpfs           1.0M     0  1.0M   0% /run/credentials/systemd-journald.service
+tmpfs           987M   96K  987M   1% /tmp
+tmpfs           1.0M     0  1.0M   0% /run/credentials/getty@tty1.service
+tmpfs           198M  124K  198M   1% /run/user/1000
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ time ls /
+bin   home            lib32       mnt   run   sys  vmlinuz
+boot  initrd.img      lib64       opt   sbin  tmp  vmlinuz.old
+dev   initrd.img.old  lost+found  proc  srv   usr
+etc   lib             media       root  swap  var
+
+real    0.01s
+user    0.00s
+sys     0.01s
+cpu     63%
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ ip a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host noprefixroute 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 08:00:27:d1:f8:5d brd ff:ff:ff:ff:ff:ff
+    inet 192.168.0.231/24 brd 192.168.0.255 scope global dynamic noprefixroute eth0
+       valid_lft 603599sec preferred_lft 603599sec
+    inet6 fe80::27b3:e4d6:174f:468a/64 scope link noprefixroute 
+       valid_lft forever preferred_lft forever
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ ping -c 3 kali.org
+PING kali.org (104.18.4.159) 56(84) bytes of data.
+64 bytes from 104.18.4.159: icmp_seq=1 ttl=57 time=13.7 ms
+64 bytes from 104.18.4.159: icmp_seq=2 ttl=57 time=14.0 ms
+64 bytes from 104.18.4.159: icmp_seq=3 ttl=57 time=18.7 ms
+
+--- kali.org ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2004ms
+rtt min/avg/max/mdev = 13.693/15.470/18.738/2.313 ms
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ ss -tulpen
+Netid State  Recv-Q  Send-Q   Local Address:Port   Peer Address:Port Process 
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ ^[[200~uname -r~
+zsh: bad pattern: ^[[200~uname
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ uname -r
+6.12.25-amd64
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ uname -m
+x86_64
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ echo $PATH
+/home/kali/.local/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/kali/.dotnet/tools
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ sudo apt update
+Get:1 http://kali.download/kali kali-rolling InRelease [34.0 kB]
+Get:2 http://kali.download/kali kali-rolling/main amd64 Packages [20.9 MB]
+Get:3 http://kali.download/kali kali-rolling/main amd64 Contents (deb) [52.6 MB]
+Get:4 http://kali.download/kali kali-rolling/contrib amd64 Packages [114 kB]
+Get:5 http://kali.download/kali kali-rolling/contrib amd64 Contents (deb) [255 kB]
+Get:6 http://kali.download/kali kali-rolling/non-free amd64 Packages [188 kB]
+Get:7 http://kali.download/kali kali-rolling/non-free amd64 Contents (deb) [904 kB]
+Get:8 http://kali.download/kali kali-rolling/non-free-firmware amd64 Packages [11.9 kB]
+Get:9 http://kali.download/kali kali-rolling/non-free-firmware amd64 Contents (deb) [28.7 kB]
+Fetched 75.1 MB in 6s (12.5 MB/s)                                      
+1620 packages can be upgraded. Run 'apt list --upgradable' to see them.
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ apt search jq
+dasel/kali-rolling 2.8.1-1 amd64
+  Query, update and convert data structures from the command line (program)
+
+fq/kali-rolling 0.9.0-2 amd64
+  jq for binary formats (program)
+
+gojq/kali-rolling 0.12.13-1 amd64
+  pure Go implementation of jq (program)
+
+golang-bugst-testifyjson-dev/kali-rolling 1.3.0-1 all
+  Utilities and helper function for unit testing JSON output in golang (libr>
+
+golang-github-goji-param-dev/kali-rolling 0.0~git20160927.d7f49fd-6 all
+  Rack / jQuery style parameter parsing for Go
+
+golang-github-itchyny-go-flags-dev/kali-rolling 1.5.0-3 all
+  Go library for parsing command line arguments (itchyny's fork)
+
+golang-github-itchyny-gojq-dev/kali-rolling 0.12.13-1 all
+  pure Go implementation of jq (library)
+
+golang-github-puerkitobio-goquery-dev/kali-rolling 1.11.0-1 all
+  jQuery-style HTML manipulation in Go
+
+golang-github-tomwright-dasel-dev/kali-rolling 2.8.1-1 all
+  Query, update and convert data structures from the command line (library)
+
+golang-github-wader-gojq-dev/kali-rolling 0.0~git20231105.2b6d9e2-1 all
+  fork of the gojq library for fq
+
+grimshot/kali-rolling 1.10.1-1 all
+  Easy to use screenshot tool for sway
+
+haskell-js-dgtable-utils/kali-rolling 0.5.2-5 all
+  obtain minified jquery.dgtable code
+
+jello/kali-rolling 1.6.1-1 all
+  Filter for JSON and JSON Lines data with Python syntax
+
+jid/kali-rolling 0.7.6-1+b18 amd64
+Finishing logfile... (interrupt to abort)
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ sudo apt update
+Hit:1 http://http.kali.org/kali kali-rolling InRelease
+1620 packages can be upgraded. Run 'apt list --upgradable' to see them.
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ apt search jq | head -n 10
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Sorting...
+Full Text Search...
+dasel/kali-rolling 2.8.1-1 amd64
+  Query, update and convert data structures from the command line (program)
+
+fq/kali-rolling 0.9.0-2 amd64
+  jq for binary formats (program)
+
+gojq/kali-rolling 0.12.13-1 amd64
+  pure Go implementation of jq (program)
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ sudo apt install -y jq && jq --version && sudo apt remove -y jq
+Upgrading:                      
+  libjq1
+                                                                             
+Installing:
+  jq
+                                                                             
+Summary:
+  Upgrading: 1, Installing: 1, Removing: 0, Not Upgrading: 1619
+  Download size: 252 kB
+  Space needed: 138 kB / 63.7 GB available
+
+Get:1 http://kali.download/kali kali-rolling/main amd64 libjq1 amd64 1.8.1-4 [167 kB]
+Get:2 http://kali.download/kali kali-rolling/main amd64 jq amd64 1.8.1-4 [85.4 kB]
+Fetched 252 kB in 1s (411 kB/s)
+(Reading database ... 412482 files and directories currently installed.)
+Preparing to unpack .../libjq1_1.8.1-4_amd64.deb ...
+Unpacking libjq1:amd64 (1.8.1-4) over (1.7.1-5) ...
+Selecting previously unselected package jq.
+Preparing to unpack .../archives/jq_1.8.1-4_amd64.deb ...
+Unpacking jq (1.8.1-4) ...
+Setting up libjq1:amd64 (1.8.1-4) ...
+Setting up jq (1.8.1-4) ...
+Processing triggers for libc-bin (2.41-6) ...
+Processing triggers for man-db (2.13.1-1) ...
+Processing triggers for kali-menu (2025.2.7) ...
+jq-1.8.1
+REMOVING:                       
+  jq
+                                                                             
+Summary:
+  Upgrading: 0, Installing: 0, Removing: 1, Not Upgrading: 1619
+  Freed space: 136 kB
+
+(Reading database ... 412491 files and directories currently installed.)
+Removing jq (1.8.1-4) ...
+Processing triggers for man-db (2.13.1-1) ...
+Processing triggers for kali-menu (2025.2.7) ...
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ journalctl -n 20 --no-pager
+Dec 15 15:23:50 kali usermod[9076]: add 'kali' to group 'lab'
+Dec 15 15:23:50 kali usermod[9076]: add 'kali' to shadow group 'lab'
+Dec 15 15:23:50 kali sudo[9073]: pam_unix(sudo:session): session closed for user root
+Dec 15 15:25:01 kali CRON[9681]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Dec 15 15:25:01 kali CRON[9683]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+Dec 15 15:25:01 kali systemd[1]: plocate-updatedb.service - Update the plocate database was skipped because of an unmet condition check (ConditionACPower=true).
+Dec 15 15:25:01 kali CRON[9681]: pam_unix(cron:session): session closed for user root
+Dec 15 15:29:04 kali sudo[11665]:     kali : TTY=pts/0 ; PWD=/home/kali ; USER=root ; COMMAND=/usr/bin/apt update
+Dec 15 15:29:04 kali sudo[11665]: pam_unix(sudo:session): session opened for user root(uid=0) by kali(uid=1000)
+Dec 15 15:29:12 kali kernel: clocksource: Long readout interval, skipping watchdog check: cs_nsec: 1009006367 wd_nsec: 1009005839                         
+Dec 15 15:29:22 kali sudo[11665]: pam_unix(sudo:session): session closed for user root
+Dec 15 15:32:37 kali sudo[13395]:     kali : TTY=pts/0 ; PWD=/home/kali ; USER=root ; COMMAND=/usr/bin/apt update
+Dec 15 15:32:37 kali sudo[13395]: pam_unix(sudo:session): session opened for user root(uid=0) by kali(uid=1000)
+Dec 15 15:32:38 kali sudo[13395]: pam_unix(sudo:session): session closed for user root
+Dec 15 15:32:56 kali sudo[13580]:     kali : TTY=pts/0 ; PWD=/home/kali ; USER=root ; COMMAND=/usr/bin/apt install -y jq
+Dec 15 15:32:56 kali sudo[13580]: pam_unix(sudo:session): session opened for user root(uid=0) by kali(uid=1000)
+Dec 15 15:33:03 kali sudo[13580]: pam_unix(sudo:session): session closed for user root
+Dec 15 15:33:03 kali sudo[13700]:     kali : TTY=pts/0 ; PWD=/home/kali ; USER=root ; COMMAND=/usr/bin/apt remove -y jq
+Dec 15 15:33:03 kali sudo[13700]: pam_unix(sudo:session): session opened for user root(uid=0) by kali(uid=1000)
+Dec 15 15:33:05 kali sudo[13700]: pam_unix(sudo:session): session closed for user root
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ journalctl -u ssh.service -n 20 --no-pager
+-- No entries --
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ journalctl -u sshd.service -n 20 --no-pager
+-- No entries --
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ grep -E '^(Start-Date|Commandline):' /var/log/apt/history.log | tail -n 20 
+Start-Date: 2025-05-29  19:03:50
+Commandline: apt-get install -y ?priority(standard) !?section(lib) !(~napt-listchanges|~ndebian-faq|~ndoc-debian|~npython3-reportbug|~nreportbug|~nwamerican)
+Start-Date: 2025-05-29  15:04:45
+Commandline: apt-get -y -o=quiet::NoUpdate=1 install kali-linux-core kali-linux-firmware kali-desktop-xfce
+Start-Date: 2025-05-29  15:11:55
+Commandline: apt-get -y -o=quiet::NoUpdate=1 install kali-linux-default
+Start-Date: 2025-05-29  17:23:10
+Commandline: apt-get -y -o=quiet::NoUpdate=1 install grub-pc linux-image-generic
+Start-Date: 2025-05-29  17:24:15
+Commandline: apt-get install -y virtualbox-guest-x11
+Start-Date: 2025-12-15  15:32:58
+Commandline: apt install -y jq
+Start-Date: 2025-12-15  15:33:04
+Commandline: apt remove -y jq
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ sudo tail -f /var/log/auth.log
+tail: cannot open '/var/log/auth.log' for reading: No such file or directory
+tail: no files remaining
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ sudo ls -lhS /var/log | head -n 5
+total 1.6M
+-rw-r--r--  1 root              root            1.4M Dec 15 15:33 dpkg.log
+-rw-r--r--  1 root              root             85K May 29  2025 alternatives.log
+-rw-------  1 root              root             30K Dec 15 15:08 boot.log
+-rw-r--r--  1 root              root             26K Dec 15 15:08 Xorg.0.log
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ ping -c 10 8.8.8.8
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+64 bytes from 8.8.8.8: icmp_seq=1 ttl=117 time=24.4 ms
+64 bytes from 8.8.8.8: icmp_seq=2 ttl=117 time=21.0 ms
+64 bytes from 8.8.8.8: icmp_seq=3 ttl=117 time=20.3 ms
+64 bytes from 8.8.8.8: icmp_seq=4 ttl=117 time=16.0 ms
+64 bytes from 8.8.8.8: icmp_seq=5 ttl=117 time=23.4 ms
+64 bytes from 8.8.8.8: icmp_seq=6 ttl=117 time=17.1 ms
+64 bytes from 8.8.8.8: icmp_seq=7 ttl=117 time=24.8 ms
+64 bytes from 8.8.8.8: icmp_seq=8 ttl=117 time=25.4 ms
+64 bytes from 8.8.8.8: icmp_seq=9 ttl=117 time=21.7 ms
+64 bytes from 8.8.8.8: icmp_seq=10 ttl=117 time=20.3 ms
+
+--- 8.8.8.8 ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 9025ms
+rtt min/avg/max/mdev = 15.956/21.423/25.368/3.021 ms
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ sleep 120 & kill %1
+[1] 15007
+                                                                             
+[1]  + terminated  sleep 120
+┌──(kali㉿kali)-[~]
+└─$ systemctl status ssh
+○ ssh.service - OpenBSD Secure Shell server
+     Loaded: loaded (/usr/lib/systemd/system/ssh.service; disabled; preset: >
+     Active: inactive (dead)
+       Docs: man:sshd(8)
+             man:sshd_config(5)
+
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ (cd ~/kali-ovelser/fs/tmp && sha256sum .hidden_notes > notes.sha256)
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ (cd ~/kali-ovelser/fs/tmp && sha256sum -c notes.sha256)
+.hidden_notes: OK
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ (cd ~/kali-ovelser/fs/tmp && gpg --symmetric --output notes.gpg .hidden_notes)
+gpg: keybox '/home/kali/.gnupg/pubring.kbx' created
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ gpg --quick-generate-key "Lab User" default default never
+We need to generate a lot of random bytes. It is a good idea to perform
+some other action (type on the keyboard, move the mouse, utilize the
+disks) during the prime generation; this gives the random number
+generator a better chance to gain enough entropy.
+We need to generate a lot of random bytes. It is a good idea to perform
+some other action (type on the keyboard, move the mouse, utilize the
+disks) during the prime generation; this gives the random number
+generator a better chance to gain enough entropy.
+gpg: /home/kali/.gnupg/trustdb.gpg: trustdb created
+gpg: directory '/home/kali/.gnupg/openpgp-revocs.d' created
+gpg: revocation certificate stored as '/home/kali/.gnupg/openpgp-revocs.d/C3935154256B104EBCC8116DD300CD12638356F1.rev'
+public and secret key created and signed.
+
+pub   ed25519 2025-12-15 [SC]
+      C3935154256B104EBCC8116DD300CD12638356F1
+uid                      Lab User
+sub   cv25519 2025-12-15 [E]
+
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ (cd ~/kali-ovelser/fs/tmp && gpg --output notes.sig --detach-sign .hidden_notes)
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ (cd ~/kali-ovelser/fs/tmp && gpg --verify notes.sig .hidden_notes)
+gpg: Signature made Mon 15 Dec 2025 03:41:51 PM EST
+gpg:                using EDDSA key C3935154256B104EBCC8116DD300CD12638356F1
+gpg: checking the trustdb
+gpg: marginals needed: 3  completes needed: 1  trust model: pgp
+gpg: depth: 0  valid:   1  signed:   0  trust: 0-, 0q, 0n, 0m, 0f, 1u
+gpg: Good signature from "Lab User" [ultimate]
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ history > ~/kali-ovelser/session_history.txt
+
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ mkdir -p ~/portfolio/kali_lab
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ cd ~/portfolio/kali_lab
+                                                                             
+┌──(kali㉿kali)-[~/portfolio/kali_lab]
+└─$ history > session_history.txt
+                                                                             
+┌──(kali㉿kali)-[~/portfolio/kali_lab]
+└─$ script full_session.log
+
+Script started, output log file is 'full_session.log'.
+┌──(kali㉿kali)-[~/portfolio/kali_lab]
+└─$ exit
+
+Script done.
+                                                                             
+┌──(kali㉿kali)-[~/portfolio/kali_lab]
+└─$ mkdir -p files
+                                                                             
+┌──(kali㉿kali)-[~/portfolio/kali_lab]
+└─$ cp ~/kali-ovelser/fs/tmp/.hidden_notes files/
+                                                                             
+┌──(kali㉿kali)-[~/portfolio/kali_lab]
+└─$ cp ~/kali-ovelser/fs/tmp/notes.gpg files/
+                                                                             
+┌──(kali㉿kali)-[~/portfolio/kali_lab]
+└─$ cp ~/kali-ovelser/fs/tmp/notes.sha256 files/
+                                                                             
+┌──(kali㉿kali)-[~/portfolio/kali_lab]
+└─$ mkdir -p apt_logs
+                                                                             
+┌──(kali㉿kali)-[~/portfolio/kali_lab]
+└─$ cp /var/log/apt/history.log apt_logs/
+                                                                             
+┌──(kali㉿kali)-[~/portfolio/kali_lab]
+└─$ cp /var/log/dpkg.log apt_logs/
+                                                                             
+┌──(kali㉿kali)-[~/portfolio/kali_lab]
+└─$ cd ~/portfolio         
+                                                                             
+┌──(kali㉿kali)-[~/portfolio]
+└─$ tar czvf kali_lab_backup.tar.gz kali_lab
+kali_lab/
+kali_lab/session_history.txt
+kali_lab/full_session.log
+kali_lab/apt_logs/
+kali_lab/apt_logs/dpkg.log
+kali_lab/apt_logs/history.log
+kali_lab/files/
+kali_lab/files/notes.sha256
+kali_lab/files/notes.gpg
+kali_lab/files/.hidden_notes
+                                                                             
+┌──(kali㉿kali)-[~/portfolio]
+└─$ ~/portfolio/kali_lab
+
+                                                                             
+┌──(kali㉿kali)-[~/portfolio/kali_lab]
+└─$ cd ~/portfolio/kali_lab
+                                                                             
+┌──(kali㉿kali)-[~/portfolio/kali_lab]
+└─$ ls -lh
+total 16K
+drwxrwxr-x 2 kali kali 4.0K Dec 15 15:56 apt_logs
+drwxrwxr-x 2 kali kali 4.0K Dec 15 15:55 files
+-rw-rw-r-- 1 kali kali  537 Dec 15 15:55 full_session.log
+-rw-rw-r-- 1 kali kali 2.1K Dec 15 15:54 session_history.txt
+                                                                             
+┌──(kali㉿kali)-[~/portfolio/kali_lab]
+└─$ ls -lh files/
+
+total 8.0K
+-rw-rw-r-- 1 kali kali 92 Dec 15 15:55 notes.gpg
+-rw-rw-r-- 1 kali kali 80 Dec 15 15:55 notes.sha256
+                                                                             
+┌──(kali㉿kali)-[~/portfolio/kali_lab]
+└─$ cd ~/portfolio/kali_lab && tree -L 2
+
+.
+├── apt_logs
+│   ├── dpkg.log
+│   └── history.log
+├── files
+│   ├── notes.gpg
+│   └── notes.sha256
+├── full_session.log
+└── session_history.txt
+
+3 directories, 6 files
+                                                                             
+┌──(kali㉿kali)-[~/portfolio/kali_lab]
+└─$ 
